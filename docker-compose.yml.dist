@@ -19,6 +19,7 @@ services:
       PHP_IDE_CONFIG: serverName=symfony-server
     ports:
       - '1000:80'
+      - '8000:8000'
     networks:
       - symfony-app-network
     depends_on:
