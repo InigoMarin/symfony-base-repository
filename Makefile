@@ -10,7 +10,7 @@ help: ## Show this help message
 	@egrep '^(.+)\:\ ##\ (.+)' ${MAKEFILE_LIST} | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done | column -t -c 2 -s ':#'
 
 rename: ## Replace all the occurrences of symfony-app in whole project
-	find . -type f -not -path "*.git*" -exec sed -i 's/symfony-app/$(project-name>)/g' {} \;
+	find . -type f -not -path "*.git*" -exec sed -i 's/symfony-app/$(project_name)/g' {} \;
 
 start: ## Start the containers
 	cp -n docker-compose.yml.dist docker-compose.yml || true
