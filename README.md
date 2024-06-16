@@ -9,6 +9,7 @@ This repository contains the basic configuration to run Symfony applications wit
 
 ## Instructions
 
+- `make rename` to replace all the occurrences of symfony-app in whole project
 - `make build` to build the containers
 - `make start` to start the containers
 - `make stop` to stop the containers
@@ -20,11 +21,8 @@ This repository contains the basic configuration to run Symfony applications wit
 ## Create and Run the application
 
 - [Optional] Replace all the occurrences of symfony-app in the whole project with some name more meaningful for your project
-
-```bash
-find . -type f -not -path "*.git*" -exec sed -i 's/symfony-app/<your-project-name>/g' {} \;
-```
-
+  - Execute command.
+    `make rename project_name=`<project_name>
 - `make start` to build and start the containers (you can use your IDE find and replace option to do so)
 - SSH into the container with `make ssh`
 - Create a Symfony project using the CLI (e.g. `symfony new --no-git --dir project`). See `symfony`command info for more options
